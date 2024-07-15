@@ -2,11 +2,12 @@ package br.com.alura.screenmatch.modelos;
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme.Filmes meuFilme = new Filme.Filmes();
+        var meuFilme = new Filme.Filmes();
         meuFilme.setNome("Minha mãe é uma peça");
         meuFilme.setAnoDeLancamento(2019);
         meuFilme.setDuracaoEmMinutos(160);
@@ -43,6 +44,21 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+
+
+                //codigo anterior omitido
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(meuFilme);
+
+
+        System.out.println("Tamanho da lista: " +listaDeFilmes.size());
+        System.out.println("Primeiro Filme: " +listaDeFilmes.get(0));
+        System.out.println(listaDeFilmes);
+
+
+
     }
 
     static class Teste {
