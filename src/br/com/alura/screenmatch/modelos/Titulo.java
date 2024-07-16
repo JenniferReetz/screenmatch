@@ -7,6 +7,12 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
     int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;
     }

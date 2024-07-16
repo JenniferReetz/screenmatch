@@ -7,9 +7,8 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        var meuFilme = new Filme.Filmes();
-        meuFilme.setNome("Minha mãe é uma peça");
-        meuFilme.setAnoDeLancamento(2019);
+        var meuFilme = new Filme.Filmes("Minha mãe é uma peça" , 2019);
+       // meuFilme.setNome("Minha mãe é uma peça");
         meuFilme.setDuracaoEmMinutos(160);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -21,12 +20,8 @@ public class Principal {
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
-        // meuFilme.somaDasAvaliacoes() = 1;
-        //System.out.println(meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
@@ -49,7 +44,7 @@ public class Principal {
 
                 //codigo anterior omitido
 
-        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        ArrayList<Filme.Filmes> listaDeFilmes = new ArrayList<>();
         listaDeFilmes.add(meuFilme);
 
 
@@ -64,14 +59,13 @@ public class Principal {
     static class Teste {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
-            Filme.Filmes seuFilme = new Filme.Filmes();
-            seuFilme.setNome("Meu Malvado favorto 4");
-            seuFilme.setAnoDeLancamento(2024);
+            Filme.Filmes seuFilme = new Filme.Filmes("Meu Malvado favorto 4" , 2024);
+            //seuFilme.setNome("Meu Malvado favorto 4");
             System.out.println("Digite o nome do filme: ");
             String nomeDoFilme = scanner.nextLine();
             seuFilme.setNome(nomeDoFilme);
             System.out.println("Digite a quantidade em minutos: ");
-            int minutos = (int) scanner.nextInt();
+            int minutos = scanner.nextInt();
             seuFilme.setDuracaoEmMinutos(minutos);
             System.out.println("\nDigite três notas entre 0 e 100: ");
             for (int i = 0; i < 3; i++) {
