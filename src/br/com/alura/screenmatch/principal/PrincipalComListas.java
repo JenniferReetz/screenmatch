@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class PrincipalComListas {
     public static void main(String[] args) {
         var meuFilme = new Filme.Filmes("Minha mãe é uma peça", 2019);
-        meuFilme.avalia(7);
+        meuFilme.avalia(10);
         Serie lost = new Serie("Lost", 2000);
         lost.avalia(9);
         ArrayList<Titulo> lista = new ArrayList<>();
@@ -17,8 +17,10 @@ public class PrincipalComListas {
         lista.add(lost);
         for (Titulo item: lista) {
             System.out.println(item.getNome());
-            Filme.Filmes filme = (Filme.Filmes) item;
-            System.out.println("Classifição: " + filme.getClassificacao());
+            if (item instanceof Filme.Filmes filme && filme.getClassificacao() > 2) {
+                System.out.println("Classifição: " + filme.getClassificacao());
+            }
+
         }
     }
 }
