@@ -1,15 +1,13 @@
 package br.com.alura.screenmatch.modelos;
 
-import javax.swing.*;
-
 public class Serie extends Titulo{
     private int temporadas;
     private boolean ativa;
     private int episodiosPorTemporada;
     private int minutosPorEpisodios;
 
-    public Serie(String nome, int anoDeLancamento) {
-        super(nome, anoDeLancamento);
+    public Serie(String nome, int anoDeLancamento, String link) {
+        super(nome, anoDeLancamento , link);
     }
 
     public int getTemporadas() {

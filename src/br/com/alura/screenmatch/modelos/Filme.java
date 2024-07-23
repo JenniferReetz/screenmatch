@@ -4,8 +4,8 @@ import br.com.alura.screenmatch.calculos.Classificavel;
 
 public class Filme extends Titulo implements Classificavel {
 
-    public Filme(String nome, int anoDeLancamento) {
-        super(nome, anoDeLancamento);
+    public Filme(String nome, int anoDeLancamento, String link) {
+        super(nome, anoDeLancamento, link);
     }
 
     @Override
@@ -16,8 +16,8 @@ public class Filme extends Titulo implements Classificavel {
     public static class Filmes extends Titulo implements Classificavel {
         private String diretor;
 
-        public Filmes(String nome, int anoDeLancamento) {
-            super(nome, anoDeLancamento);
+        public Filmes(String nome, int anoDeLancamento, String link) {
+            super(nome, anoDeLancamento, link);
         }
 
         public void setDiretor(String diretor) {

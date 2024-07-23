@@ -6,26 +6,36 @@ import com.google.gson.annotations.SerializedName;
 public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
+    private String link;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public Titulo(String nome, int anoDeLancamento) {
+
+    public Titulo(String nome, int anoDeLancamento, String link) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+        this.link = link;
+
     }
 
     public Titulo(TituloOmdb meuTituloOmdb) {
         this.nome = meuTituloOmdb.title();
-        if (meuTituloOmdb.runtime().length() > 6 ){
+        this.link = meuTituloOmdb.poster();
+        if (meuTituloOmdb.runtime().length() > 7 ){
             throw new ErroDeconversaoDeMinutosException("Não consegui converter a duração" +
                     "em minutos, pois tem mais de 6 caracteres.");
         }
-        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
-        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,3));
-
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year().substring(0,4));
+  if (meuTituloOmdb.runtime().length() == 6) {
+      this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 2));
+  }
+  if (meuTituloOmdb.runtime().length() == 7) {
+      this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 3));
+  }
     }
+
 
     public int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;
@@ -88,8 +98,8 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "Ano de lancamento: " + anoDeLancamento +
-                ";\nNome: " + nome + ";\nDuração em minutos: " + duracaoEmMinutos + ".";
+        return "\nAno de lancamento: " + anoDeLancamento +
+                "; Nome: " + nome + "; Duração em minutos: " + duracaoEmMinutos + "; Link do Poster: " + link + ".";
     }
 }
 

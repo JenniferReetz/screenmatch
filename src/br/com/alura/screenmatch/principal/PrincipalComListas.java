@@ -10,9 +10,9 @@ import java.util.Comparator;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
-        var meuFilme = new Filme.Filmes("Minha mãe é uma peça", 2019);
+        var meuFilme = new Filme.Filmes("Minha mãe é uma peça", 2019 ,"");
         meuFilme.avalia(10);
-        Serie lost = new Serie("Lost", 2000);
+        Serie lost = new Serie("Lost", 2000, "");
         lost.avalia(9);
         ArrayList<Titulo> lista = new ArrayList<>();
         lista.add(meuFilme);

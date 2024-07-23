@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        var meuFilme = new Filme.Filmes("Minha mãe é uma peça" , 2019);
+        var meuFilme = new Filme.Filmes("Minha mãe é uma peça" , 2019, "");
        // meuFilme.setNome("Minha mãe é uma peça");
         meuFilme.setDuracaoEmMinutos(160);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
@@ -24,7 +24,7 @@ public class Principal {
         System.out.println(meuFilme.pegaMedia());
 
 
-        Serie lost = new Serie("Lost", 2000);
+        Serie lost = new Serie("Lost", 2000, "");
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
@@ -62,7 +62,7 @@ public class Principal {
     static class Teste {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
-            Filme.Filmes seuFilme = new Filme.Filmes("Meu Malvado favorto 4" , 2024);
+            Filme.Filmes seuFilme = new Filme.Filmes("Meu Malvado favorto 4" , 2024, "");
             //seuFilme.setNome("Meu Malvado favorto 4");
             System.out.println("Digite o nome do filme: ");
             String nomeDoFilme = scanner.nextLine();
